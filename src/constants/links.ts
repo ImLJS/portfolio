@@ -27,7 +27,7 @@ export const NAVLINKS = [
   },
   {
     title: 'Fun',
-    href: ROUTES.NULL,
+    href: ROUTES.FUN,
     icon: Music,
     description: 'Books, music, anime, and random fun stuff!',
     color: '#FFC75F',

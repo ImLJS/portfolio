@@ -32,7 +32,7 @@ const MenuItem = ({ href, children }: MenuType) => {
 const Hero = () => {
   return (
     <>
-      <div className="flex-grow items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
+      <div className="flex-grow items-start space-y-2 pt-8 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
         <div className="flex flex-col items-center space-x-2 pt-8 font-spaceGrotesk">
           <Image
             src="/avatar3.jpg"
@@ -58,11 +58,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="prose dark:prose-invert max-w-none space-y-5 pb-8 pt-8 xl:col-span-2">
-          <div className="flex gap-1">
+          <div className="flex w-full items-center justify-center gap-1 md:justify-start">
             <h1 className="gradient-effect text-4xl font-black md:text-6xl">
               Hey, There!
             </h1>
-            <span className="animate-wave text-5xl">👋</span>
+            <span className="animate-wave text-4xl md:text-6xl">👋</span>
           </div>
           <p className="text-lg font-medium">
             I&apos;m Leone Jacob - a passionate Frontend Developer based in
@@ -78,7 +78,7 @@ const Hero = () => {
               <MenuItem href={link.href} key={link.title}>
                 <div className="flex items-center gap-3 py-3">
                   <link.icon
-                    size={16}
+                    size={20}
                     color={link.color}
                     className="stroke-2"
                   />

@@ -1,12 +1,13 @@
 'use client';
 
+import MobileNav from '@/components/MobileNav';
+import ThemeToggle from '@/components/ThemeToggle';
 import { NAVLINKS } from '@/constants/links';
 import { ROUTES } from '@/constants/routes';
 import { cn } from '@/lib/utils';
 import { SearchIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ThemeToggle from './ThemeToggle';
 
 type NavMenuType = {
   href: string;
@@ -30,14 +31,14 @@ const NavMenuItem = ({ href, children }: NavMenuType) => {
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-background py-8 font-spaceGrotesk">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-background pt-8 font-spaceGrotesk">
       <div>
         <Link href={ROUTES.HOME}>
           <h1 className="text-2xl font-semibold">ljs.</h1>
         </Link>
       </div>
       <nav className="flex items-center gap-6">
-        <div className="flex gap-5">
+        <div className="hidden gap-5 md:flex">
           {NAVLINKS.map(link => (
             <NavMenuItem href={link.href} key={link.title}>
               {link.title}
@@ -46,6 +47,7 @@ const Header = () => {
         </div>
         <SearchIcon size={20} />
         <ThemeToggle />
+        <MobileNav className={'md:hidden'} />
       </nav>
     </header>
   );

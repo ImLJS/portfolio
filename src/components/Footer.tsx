@@ -17,7 +17,7 @@ const SocialIconItem = ({ href, title, children }: SocialIconType) => {
 
 const Footer = () => {
   return (
-    <footer className="flex flex-shrink-0 justify-between py-5">
+    <footer className="mt-auto flex justify-between border-t-[1px] py-5">
       <div>
         <p>&copy; 2025</p>
       </div>
