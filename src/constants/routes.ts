@@ -3,6 +3,7 @@ export const ROUTES = {
   PROJECTS: '/projects',
   ABOUT: '/about',
   APPS: '/apps',
+  FUN: '/fun',
   NULL: '#',
   ANALYTICS: '#',
   SOURCE: '#',
