@@ -1,10 +1,12 @@
 import '@/styles/globals.css';
 
+import Layout from '@/components/layout/Layout';
 import { type Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import Providers from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-spaceGrotesk' });
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -15,8 +17,12 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
-        <Providers>{children}</Providers>
+      <body className={`${inter.className} ${spaceGrotesk.variable} antialiased`}>
+        <Providers>
+          <Layout>
+            {children}
+          </Layout>
+        </Providers>
       </body>
     </html>
   );

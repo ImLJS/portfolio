@@ -4,16 +4,20 @@ import { ROUTES } from './routes';
 
 export const NAVLINKS = [
   {
-    title: 'Home',
-    href: ROUTES.HOME,
-  },
-  {
-    title: 'Apps',
-    href: ROUTES.APPS,
+    title: 'About',
+    href: ROUTES.ABOUT,
   },
   {
     title: 'Projects',
     href: ROUTES.PROJECTS,
+  },
+  {
+    title: 'Fun',
+    href: ROUTES.NULL,
+  },
+  {
+    title: 'More',
+    href: ROUTES.NULL,
   },
 ];
 
