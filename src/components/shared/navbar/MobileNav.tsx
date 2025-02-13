@@ -1,6 +1,4 @@
 const MobileNav = () => {
-    return (
-        <div>MobileNav</div>
-    )
-}
-export default MobileNav
+  return <div>MobileNav</div>;
+};
+export default MobileNav;
