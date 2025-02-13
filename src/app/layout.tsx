@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${inter.className} ${spaceGrotesk.variable} antialiased h-full`}>
         <Providers>
           <Layout>
             {children}
