@@ -13,7 +13,7 @@ type MenuType = {
   children: React.ReactNode;
 };
 
-export const SocialIconItem = ({ href, title, children }: SocialIconType) => {
+const SocialIconItem = ({ href, title, children }: SocialIconType) => {
   return (
     <Link href={href} rel="noopener noreferrer">
       <span title={title}>{children}</span>
@@ -32,7 +32,7 @@ const MenuItem = ({ href, children }: MenuType) => {
 const Hero = () => {
   return (
     <>
-      <div className="flex-grow items-start space-y-2 pt-8 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
+      <div className="flex-grow items-start space-y-2 pt-6 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
         <div className="flex flex-col items-center space-x-2 pt-8 font-spaceGrotesk">
           <Image
             src="/avatar3.jpg"

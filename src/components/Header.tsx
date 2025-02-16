@@ -20,7 +20,7 @@ const NavMenuItem = ({ href, children }: NavMenuType) => {
     <Link
       href={href}
       className={cn(
-        'text-base font-medium',
+        'text-sm font-medium',
         isActive ? 'text-primary' : 'hover:text-primary',
       )}
     >
@@ -31,10 +31,10 @@ const NavMenuItem = ({ href, children }: NavMenuType) => {
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-background pt-8 font-spaceGrotesk">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-background pt-5 font-spaceGrotesk">
       <div>
         <Link href={ROUTES.HOME}>
-          <h1 className="text-2xl font-semibold">ljs.</h1>
+          <h1 className="text-xl font-semibold">ljs.</h1>
         </Link>
       </div>
       <nav className="flex items-center gap-6">
@@ -45,7 +45,7 @@ const Header = () => {
             </NavMenuItem>
           ))}
         </div>
-        <SearchIcon size={20} />
+        <SearchIcon size={18} />
         <ThemeToggle />
         <MobileNav className={'md:hidden'} />
       </nav>

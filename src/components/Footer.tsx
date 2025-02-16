@@ -17,14 +17,14 @@ const SocialIconItem = ({ href, title, children }: SocialIconType) => {
 
 const Footer = () => {
   return (
-    <footer className="mt-auto flex justify-between border-t-[1px] py-5">
+    <footer className="mt-auto flex justify-between border-t-[1px] py-4">
       <div>
         <p>&copy; 2025</p>
       </div>
       <div className="flex gap-4">
         {SOCIALLINKS.map(link => (
           <SocialIconItem href={link.href} title={link.title} key={link.title}>
-            <link.icon size={20} />
+            <link.icon size={18} />
           </SocialIconItem>
         ))}
       </div>
