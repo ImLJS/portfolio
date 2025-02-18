@@ -23,7 +23,7 @@ const SocialIconItem = ({ href, title, children }: SocialIconType) => {
 
 const MenuItem = ({ href, children }: MenuType) => {
   return (
-    <Link href={href} rel="noopener noreferrer">
+    <Link href={href} rel="noopener noreferrer" className='w-fit'>
       {children}
     </Link>
   );
@@ -35,7 +35,7 @@ const Hero = () => {
       <div className="flex-grow items-start space-y-2 pt-6 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
         <div className="flex flex-col items-center space-x-2 pt-8 font-spaceGrotesk">
           <Image
-            src="/avatar3.jpg"
+            src="/avatar.png"
             alt="avatar"
             width={192}
             height={192}
@@ -76,13 +76,13 @@ const Hero = () => {
           <div className="flex flex-col text-base font-medium">
             {NAVLINKS.map(link => (
               <MenuItem href={link.href} key={link.title}>
-                <div className="flex items-center gap-3 py-3">
+                <div className="group flex items-center gap-3 py-3">
                   <link.icon
                     size={20}
                     color={link.color}
                     className="stroke-2"
                   />
-                  <p className="cursor-pointer decoration-2 underline-offset-4 hover:underline">
+                  <p className='cursor-pointer decoration-2 underline-offset-4 group-hover:text-[var(--link-color)]' style={{ '--link-color': link.color } as React.CSSProperties}>
                     {link.description}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ const Hero = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };
