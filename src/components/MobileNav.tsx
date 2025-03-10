@@ -1,65 +1,69 @@
-import { NAVLINKS } from '@/constants/links';
-import {
-  Popover,
-  PopoverBackdrop,
-  PopoverButton,
-  PopoverPanel,
-} from '@headlessui/react';
-import { ChevronDownIcon, X } from 'lucide-react';
-import Link from 'next/link';
+'use client';
 
-type MobileNavItemType = {
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
+import { ChevronDownIcon, ChevronsRightIcon } from 'lucide-react';
+import Link from 'next/link';
+import { NAVLINKS } from '@/constants/links';
+import { useState } from 'react';
+
+type MobileNavType = React.ComponentPropsWithoutRef<'div'>;
+
+type NavMenuType = {
   href: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
-type MobileNavType = React.ComponentPropsWithoutRef<typeof Popover>;
-
-const MobileNavItem = ({ href, children }: MobileNavItemType) => {
+const NavMenuItem = ({ href, children, onClick }: NavMenuType) => {
   return (
-    <PopoverButton
-      as={Link}
+    <Link
       href={href}
-      className={'block py-2 hover:text-primary'}
+      className="flex w-full items-center justify-between border-b p-4 text-base font-medium"
+      onClick={onClick}
     >
       {children}
-    </PopoverButton>
+    </Link>
   );
 };
 
 const MobileNav = (props: MobileNavType) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <Popover {...props}>
-      <PopoverButton className="group flex items-center rounded-full border border-foreground px-4 py-2 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
-      </PopoverButton>
-      <PopoverBackdrop
-        transition
-        className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm duration-150 data-[closed]:opacity-0 data-[enter]:ease-out data-[leave]:ease-in dark:bg-black/80"
-      />
-      <PopoverPanel
-        focus
-        transition
-        className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-background p-8 ring-1 ring-zinc-900/5 duration-150 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:ease-out data-[leave]:ease-in dark:ring-zinc-800"
+    <div {...props}>
+      <Drawer
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        onOpenChange={setIsOpen}
       >
-        <div className="flex flex-row-reverse items-center justify-between">
-          <PopoverButton aria-label="Close menu" className="-m-1 p-1">
-            <X className="h-6 w-6" />
-          </PopoverButton>
-          <h2 className="text-base font-medium">Menu</h2>
-        </div>
-        <nav className="mt-6">
-          <ul className="-my-2 divide-y divide-zinc-100/5 text-lg dark:divide-zinc-100/5">
+        <DrawerTrigger className="group flex items-center rounded-full border border-foreground px-4 py-2 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur dark:ring-white/10 dark:hover:ring-white/20">
+          Menu
+          <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader>
+            <DrawerTitle className="sr-only">Menu</DrawerTitle>
+          </DrawerHeader>
+          <div className="flex w-full flex-col items-center gap-5">
             {NAVLINKS.map(link => (
-              <MobileNavItem href={link.href} key={link.title}>
+              <NavMenuItem
+                href={link.href}
+                key={link.title}
+                onClick={() => setIsOpen(false)}
+              >
                 {link.title}
-              </MobileNavItem>
+                <ChevronsRightIcon size={18} className="text-primary" />
+              </NavMenuItem>
             ))}
-          </ul>
-        </nav>
-      </PopoverPanel>
-    </Popover>
+          </div>
+        </DrawerContent>
+      </Drawer>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import { NAVLINKS } from '@/constants/links';
 import { ROUTES } from '@/constants/routes';
 import { cn } from '@/lib/utils';
-import { SearchIcon } from 'lucide-react';
+import { CommandIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -45,7 +45,7 @@ const Header = () => {
             </NavMenuItem>
           ))}
         </div>
-        <SearchIcon size={18} />
+        <CommandIcon size={18} className="hover:text-primary" />
         <ThemeToggle />
         <MobileNav className={'md:hidden'} />
       </nav>

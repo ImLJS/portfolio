@@ -16,14 +16,16 @@ type MenuType = {
 const SocialIconItem = ({ href, title, children }: SocialIconType) => {
   return (
     <Link href={href} rel="noopener noreferrer">
-      <span title={title}>{children}</span>
+      <span title={title} className="hover:text-primary">
+        {children}
+      </span>
     </Link>
   );
 };
 
 const MenuItem = ({ href, children }: MenuType) => {
   return (
-    <Link href={href} rel="noopener noreferrer" className='w-fit'>
+    <Link href={href} rel="noopener noreferrer" className="w-fit">
       {children}
     </Link>
   );
@@ -70,8 +72,8 @@ const Hero = () => {
           </p>
           <p className="max-w-xl text-sm font-medium leading-relaxed md:text-base">
             Frontend developer by day, open-source tinkerer by night. When I’m
-            not coding, I’m lost in books, vibing to music, or admiring Japanese
-            art. Let’s build something cool! 🚀🎨📖
+            not coding, I&apos;m lost in books, vibing to music, or admiring
+            Japanese art. Let&apos;s build something cool! 🚀🎨📖
           </p>
           <div className="flex flex-col text-base font-medium">
             {NAVLINKS.map(link => (
@@ -82,7 +84,12 @@ const Hero = () => {
                     color={link.color}
                     className="stroke-2"
                   />
-                  <p className='cursor-pointer decoration-2 underline-offset-4 group-hover:text-[var(--link-color)]' style={{ '--link-color': link.color } as React.CSSProperties}>
+                  <p
+                    className="cursor-pointer decoration-2 underline-offset-4 group-hover:text-[var(--link-color)]"
+                    style={
+                      { '--link-color': link.color } as React.CSSProperties
+                    }
+                  >
                     {link.description}
                   </p>
                 </div>
@@ -90,7 +97,7 @@ const Hero = () => {
             ))}
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 };
