@@ -16,7 +16,9 @@ type MenuType = {
 const SocialIconItem = ({ href, title, children }: SocialIconType) => {
   return (
     <Link href={href} rel="noopener noreferrer">
-      <span title={title} className='hover:text-primary'>{children}</span>
+      <span title={title} className="hover:text-primary">
+        {children}
+      </span>
     </Link>
   );
 };
@@ -70,8 +72,8 @@ const Hero = () => {
           </p>
           <p className="max-w-xl text-sm font-medium leading-relaxed md:text-base">
             Frontend developer by day, open-source tinkerer by night. When I’m
-            not coding, I&apos;m lost in books, vibing to music, or admiring Japanese
-            art. Let&apos;s build something cool! 🚀🎨📖
+            not coding, I&apos;m lost in books, vibing to music, or admiring
+            Japanese art. Let&apos;s build something cool! 🚀🎨📖
           </p>
           <div className="flex flex-col text-base font-medium">
             {NAVLINKS.map(link => (

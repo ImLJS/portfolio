@@ -1,3 +1,14 @@
+import {
+  SiReact,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiPython,
+} from '@icons-pack/react-simple-icons';
+
 export const PROJECTS = [
   {
     id: 1,
@@ -96,5 +107,40 @@ export const APPS = [
     appLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     longDescription:
       'A customizable Pomodoro timer to boost focus and productivity. Features include adjustable session durations, break reminders, and sound notifications.',
+  },
+];
+
+export const TECH = [
+  {
+    title: 'HTML',
+    icon: SiHtml5,
+  },
+  {
+    title: 'CSS',
+    icon: SiCss3,
+  },
+  {
+    title: 'JavaScript',
+    icon: SiJavascript,
+  },
+  {
+    title: 'TypeScript',
+    icon: SiTypescript,
+  },
+  {
+    title: 'React',
+    icon: SiReact,
+  },
+  {
+    title: 'NextJs',
+    icon: SiNextdotjs,
+  },
+  {
+    title: 'Tailwind',
+    icon: SiTailwindcss,
+  },
+  {
+    title: 'Python',
+    icon: SiPython,
   },
 ];

@@ -10,7 +10,9 @@ type SocialIconType = {
 const SocialIconItem = ({ href, title, children }: SocialIconType) => {
   return (
     <Link href={href} rel="noopener noreferrer">
-      <span title={title} className='hover:text-primary'>{children}</span>
+      <span title={title} className="hover:text-primary">
+        {children}
+      </span>
     </Link>
   );
 };
