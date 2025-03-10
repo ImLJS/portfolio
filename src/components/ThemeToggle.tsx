@@ -22,6 +22,7 @@ const ThemeToggle = () => {
         theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
       }
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className='hover:text-primary'
     >
       {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
     </button>
