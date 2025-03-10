@@ -45,7 +45,7 @@ const Header = () => {
             </NavMenuItem>
           ))}
         </div>
-        <CommandIcon size={18} className='hover:text-primary'/>
+        <CommandIcon size={18} className="hover:text-primary" />
         <ThemeToggle />
         <MobileNav className={'md:hidden'} />
       </nav>
