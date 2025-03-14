@@ -1,7 +1,6 @@
 'use client';
 
 import MobileNav from '@/components/MobileNav';
-import ThemeToggle from '@/components/ThemeToggle';
 import { NAVLINKS } from '@/constants/links';
 import { ROUTES } from '@/constants/routes';
 import { cn } from '@/lib/utils';
@@ -46,7 +45,6 @@ const Header = () => {
           ))}
         </div>
         <CommandIcon size={18} className="hover:text-primary" />
-        <ThemeToggle />
         <MobileNav className={'md:hidden'} />
       </nav>
     </header>

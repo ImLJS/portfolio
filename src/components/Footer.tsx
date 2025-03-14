@@ -1,5 +1,7 @@
+'use client';
 import { SOCIALLINKS } from '@/constants/links';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type SocialIconType = {
   href: string;
@@ -18,6 +20,12 @@ const SocialIconItem = ({ href, title, children }: SocialIconType) => {
 };
 
 const Footer = () => {
+  const path = usePathname();
+
+  if (path === '/') {
+    return null;
+  }
+
   return (
     <footer className="mt-auto flex justify-between border-t-[1px] py-4">
       <div>

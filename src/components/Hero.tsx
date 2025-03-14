@@ -33,8 +33,8 @@ const MenuItem = ({ href, children }: MenuType) => {
 
 const Hero = () => {
   return (
-    <>
-      <div className="flex-grow items-start space-y-2 pt-6 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
+    <div className="flex min-h-[80vh] items-center justify-center">
+      <div className="flex w-full max-w-6xl flex-col items-center space-y-2 pt-6 xl:grid xl:grid-cols-3 xl:gap-x-10 xl:space-y-0">
         <div className="flex flex-col items-center space-x-2 pt-8 font-spaceGrotesk">
           <Image
             src="/avatar.png"
@@ -98,7 +98,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
